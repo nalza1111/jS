@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체3</title>
+</head>
+<body>
+    <script>
+    function Product(goods, weight, price){
+        this.goods =  goods,
+        this.weight = weight,
+        this.price = price;
+    };
+    //프로토타입
+    Product.prototype.calculator = function(weight){
+        return console.log(`이름 : ${this.goods} 무게 : ${weight}g 가격 : ${this.price*this.weight/100}원`)
+    } 
+    //새객체
+    let p = new Product('삼겹살', 100, 1690); 
+    let c = new Product('소고기', 100, 3000); 
+    //메소드호출
+    p.calculator();
+    c.calculator();
+    
+    </script>   
+</body>
+</html>

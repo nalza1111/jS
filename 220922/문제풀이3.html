@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.문제풀이</title>
+</head>
+<body>
+    <script>
+        // 1
+        // let even = 0;
+        // let odd = 0;
+        // for(let i=1; i<101; i++){
+        //     (i % 2 === 0) ? even = even + i : odd = odd + i;
+        // }
+        // console.log(`짝수는${even}, 홀수는${odd}`);
+
+
+        // let even = 0;
+        // let odd = 0;
+        // for(let i=1; i<=100; i++){
+        //     if(i % 2 == 0){
+        //         even += i;
+        //      }else{
+        //         odd += i;
+        //      }
+        // }
+        // console.log(`짝수는${even}, 홀수는${odd}`);
+        
+        // 2
+        // let sum5 = 0;
+        // for(let i=1; i<=100; i++){
+        //     if(i % 5 === 0) sum5 += i;
+        // }
+        // console.log(`1부터 100까지 5의 배수 합은${sum5}`);
+
+        // 2-2 3의 배수, 7의 배수
+        // let sum = 0;
+        // for(let i=1; i<=100; i++){
+        //     if(i % 3 === 0 && i % 7 == 0)
+        //          sum = sum + i;
+        // }
+        // console.log(`1부터 100까지 3과 7의 배수 합은${sum}`);
+
+        // let count = 0;
+        // for(let i=1; i<=100; i++){
+        //     if(i % 3 === 0 && i % 7 === 0){
+        //          count += 1;
+        //     }
+        // }
+        // console.log(`1부터 100까지 3과 7의 배수의 개수는${count}`);
+
+        // let count2 = 0;
+        // for(let i=1; i<=100; i++){
+        //     if(i % 3 === 0 && i % 7 === 0){
+        //         console.log(i);
+        //         count2++;
+        //     }
+        // }
+
+        // console.log(`1부터 100까지 3과 7의 배수의 개수는${count2}`);
+        //3
+        // let fac = Number(prompt('n! 숫자를 입력하시오'));
+        // let n = 1;
+        // for(let i=1; i<=fac; i++){  //교수님께서는 i 2부터 시작..  i<=fac)
+        //    n*=i;
+        // }
+        // console.log(n);
+
+
+
+
+        //3-2####################################################################
+        // let fact = Number(prompt('n! 숫자를 입력하시오'));
+        // let m = 1;
+        // for(let i=1; i<fac2+1; i++){
+        //    m*=i;
+        // }
+        // console.log(m);#######################################################
+
+        //4
+        // for(i=2; i<=9; i++){
+        //     console.log(i + '단');
+        //     for(j=1; j<=9; j++){
+        //         console.log(`${i} X ${j} = ${i*j}`);
+        //     }
+        // }
+        
+        // //4-2
+        // let xx = 'X'
+        // let equ = '='
+        // for(i=2; i<=9; i++){
+        //     let sup = '';
+        //     console.log(i + '단');
+        //     for(j=1; j<=9; j++){
+                
+        //         let ad = '';
+        //         co = i*j;
+        //         sup += i + xx + j + equ + co + '\n';
+        //     }
+        //     console.log(sup);
+        // }
+        
+        //5
+     
+            
+        for(i=1; i<=5; i++){
+            let vl = '';
+                for(b=5-i; b>0; b--){
+                    vl += ' ';
+                }
+                for(s=0; s<(i-1)*2+1; s++){
+                    vl += '*';
+                }
+                for(d=5-i; d>0; d--){
+                    vl += ' ';
+                }
+                console.log(vl); 
+        }
+        for(i=4; i>0; i--){
+            let vl = '';
+                for(b=5-i; b>0; b--){
+                    vl += ' ';
+                }
+                for(s=0; s<(i-1)*2+1; s++){
+                    vl += '*';
+                }
+                for(d=5-i; d>0; d--){
+                    vl += ' ';
+                }
+                console.log(vl); 
+        }
+        
+        //5-2
+        for(i=1; i<=7; i++){
+            let wi = '';
+            if(i<=4){
+                for(j=1; j<=2*(i-1)+1; j++){
+                    wi += '*';
+                }
+                for(k=1; k<=12-4*(i-1); k++){
+                    wi += ' ';
+                }
+                for(l=1; l<=2*(i-1)+1; l++){
+                    wi += '*';
+                }
+                console.log(wi);
+            }else{
+                for(x=1; x<=5-2*(i-5); x++){
+                    wi += '*';
+                }
+                for(r=1; r<=(i-4)*4; r++){
+                    wi += ' ';
+                }
+                for(z=1; z<=5-2*(i-5); z++){
+                    wi += '*';
+                }
+                console.log(wi); 
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

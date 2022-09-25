@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.문제풀이</title>
+</head>
+<body>
+    <script>
+     //1
+        let num = Number(prompt('숫자(0~6)를 입력하세요'));
+        switch(num){
+            case 0:
+                console.log('일요일입니다');
+                break;
+            case 1:
+                console.log('월요일입니다');
+                break;
+            case 2:
+                console.log('화요일입니다');
+                break;
+            case 3:
+                console.log('수요일입니다'); //break를 걸어 빠져나오게 해야함
+                break;
+            case 4:
+                console.log('목요일입니다');
+                break;    
+            case 5:
+                console.log('금요일입니다');
+                break;
+            default:
+                console.log('토요일입니다');
+                break;
+        }
+    //2    
+        let age = Number(prompt('나이를 입력하세요'));
+            (age>=18)?
+                alert(`${age}세 판매 가능`):
+                alert(`${age}세 판매 불가`);
+            // if(age>=18){
+            //     alert(`${age}세 판매 가능`);
+            // }else{
+            //     alert(`${age}세 판매 불가`);
+            // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <script>
+    function Product(goods, weight, price){
+        this.name = name,
+        this.weight = weight,
+        this.price = price
+        //this.cal = function(){} 프로토타입으로 만드는 게 메모리 상 더 나음
+    }    
+    Product.prototype.calucalte = function(weight){ //생성자 함수꺼
+        return weight/this.weight * this.price;
+    }
+    
+    let sam = new Product('삼겹살', 100, 1690);
+    let so = new Product('소고기', 100, 3000);
+
+    console.log(sam.calucalte(500));
+    console.log(so.calucalte(500));
+    
+    </script>   
+</body>
+</html>

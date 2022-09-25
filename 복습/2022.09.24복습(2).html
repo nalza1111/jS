@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체(object) 복습</title>
+</head>
+<body>
+    <script>
+        let book = {
+            pages : 500,
+            color : 'red',
+            author : '길동',
+            arr : [1,2,3,4],
+            info : function(){
+                alert(this.pages + '페이지다' + this.author +'작가다');
+                }
+            };
+    
+        let book2 = book;
+        console.log(book);
+        console.log(book2);
+        book.pages = 600;
+        console.log(book);
+        console.log(book2);
+        console.log(book2.arr[2]);
+        //객체 내부 값 : 속성(프로퍼티)     객체 내부 함수 : 메소드
+
+        function clone(obj){
+            let output = {};
+            for (let i in obj){
+                output[i] = obj[i];
+            }
+            return output
+        }
+        
+        let original = {
+            a:10,
+            b:20
+        }
+        let refernced = original;
+        console.log(original);
+        console.log(refernced);
+        let cloned = clone(original);
+        console.log(original);
+        console.log(refernced);
+        console.log(cloned);        
+        original.a = 88;
+        console.log(original);  //a: 88, b: 20
+        console.log(refernced); //a: 88, b: 20  --> (참조)얕은 복사
+        console.log(cloned);    //a: 10, b: 20  -->   (값)깊은 복사
+        //--> 쉽게 말하면 함수를 이용한 값으로 만든 배열이어서 그런 듯
+
+        let out = ''
+        for(let i in book){
+            out += '0 '+i+ ' : '+book[i]+ '\n'
+        }
+        console.log(out);
+
+        let check = '';
+        let chk ='';
+        check = 'pages'in book;
+        console.log(check);
+        chk +="'되냥?'in book: "+ ('author'in book); 
+        console.log(chk);
+        console.log('author'in book);
+        console.log('au'in book);
+        
+        let bbung =''
+        with(book){
+            bbung +='페이지 : ' + pages +'\n';
+            bbung +='책커버색 : ' + color +'\n';
+            bbung +='작가 : ' +author +'\n';
+            bbung += '평균이랭'
+        }
+        console.log(bbung);
+        book.backcolor = 'black';
+
+        otp =''
+        for(let l in book){
+            otp += '0  ' + l + ' : '+ book[l] + '\n';
+        }
+        console.log(otp);
+
+        book.toString =function(){
+            otp =''
+            for(let l in this){
+            otp += '0  ' + l + ' : '+ book[l] + '\n';
+            }
+            return otp
+
+        }
+        
+        console.log(book.toString());
+
+        delete(book.backcolor);
+        console.log(book);
+
+        function Student(name, number, add){
+            this.name = name;
+            this.number = number;
+            this.add = add;
+            this.get = function(){
+                return this.name + '이거징';}
+            this.jju = function(){
+                return this. add + '요건';}
+            this.nnn = function(){
+                return this.number*5;
+            }
+            this.nnnv2 = function(x){
+                return this.number*x
+            }
+            }
+            
+        Student.prototype.upgrade = function(i){
+            return this.name +'\n'+  this.number +'\n'+ this.number*i;
+        }
+        
+        let ssr = new Student('테츠야', 123, '오사카');
+        console.log(Student);
+        console.log(ssr);
+        console.log(ssr.nnn());
+        console.log(ssr.nnnv2(3));
+        console.log(ssr.upgrade(4));
+    </script>
+</body>
+</html>

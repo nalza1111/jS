@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<body>
+    <script>
+        // //1 선언문
+        // function myFunc(param){
+        //     console.log(param+'run');
+        // }    //-> 선언형 함수는 ;을 안붙임
+        // myFunc('byul-e ');
+        
+        // //함수 표현식(리터럴 방식)
+        // var myFunc2 =function(param2){
+        //     console.log(param2+"eat");
+        //     return 'avx'
+        // }
+        // myFunc2('byul-e  ');
+        // console.log(myFunc2('dd'));
+
+        // //
+        // function sum(a, b){
+        //     return a+b
+        // }
+        // console.log(sum(4,5,9));
+
+        // let abcdef = (function(){console.log('abc')})();
+
+        // func();
+        // (function func(){console.log('func A')});
+        // function func(){console.log('func b')};
+
+        // //화살표 함수
+
+        // let sum2 = function(){
+        //     return a+b;
+        // };
+        // let play = (a, b) => console.log(a+b);
+        // play('as','ad');
+        
+        // let asvd =()=> console.log('asdf');
+        // asvd();
+        // function pyta(wid,hei){
+        //     function squre(x){
+        //         return x*x;
+        //     }
+        //     return Math.sqrt(squre(wid+hei));
+        // }
+        // let result = pyta(100,9);
+        // console.log(result);
+
+        // //구차함수(콜백함수)
+
+        // function callTenTimes(callback){
+        //     for( let i = 0; i<10; i++){
+        //         callback()+ console.log(i);
+        //     }
+        // }
+        // let callback = function(){
+        //     console.log('함수호출');
+        // }
+        // callTenTimes(callback); //-->제어권이 얘한테 있음 10번출력가능
+        // callback();
+        
+        // function checkstudy(time, link, good){
+        //     time < 3? link() : good();
+        // }
+        // function link(){
+        //     console.log('조금 더 힘내주세요')
+        // }
+        // function good(){
+        //     console.log('오늘 할당량 끝!')
+        // }
+        // checkstudy(5,link,good);
+
+        // function retrunFunction(){
+        //     return function ddong(){
+        //         console.log('hello world');
+        //     }
+        // }
+        // console.log(retrunFunction());
+        // console.log(retrunFunction()());
+        // retrunFunction()();
+
+        // function test(name){
+        //     let output = 'hello' + name;
+
+        //     return function(){
+        //         console.log(output);
+        //     };
+        // }
+
+        // test()(); //hello undefined
+        //  console.log(test());  //안에 함수가 출력됨
+        //  console.log(test()()); //hello undefined 개행해서 undefined
+        //  test('javaaaa'); //암것도 실행안됨..리턴값이 업서서 글애
+        //  console.log(test('javvvv')); //걍 함수만나옴
+
+        // let tes = test('byul');
+        // tes(); : //(function(){console.log('hellobyul')})()
+        // let tes2 = test('bbyo');
+        // tes2();
+//         function receiveName(){
+//             let insa ='Hi!';
+
+//             function showName(){
+//                 console.log('monyang'+insa);
+//             }
+//             return showName;
+//         }
+//         let funk = receiveName();
+//         funk();
+//         console.log(funk);
+
+//         function rec(gender){
+//             function showGender(name){
+//                 return name + ' is ' + gender;
+//             }
+//             return showGender;
+//         }
+//         let male = rec('male');
+//         let fem = rec('fem');
+
+//         console.log(male('마이콜'));
+//         console.log(fem('레나'));
+
+//         let class1 = [1,2,3];
+//         let class2 = new Array(1,2,3);
+
+//         let class3 = [...class1, ...class2];
+//         console.log(class3);
+//         let class4 = [...class3, 8];
+//         console.log(class4);
+//         let class5 = [...class1.slice(0,2)];
+
+//         let calc = function(x, y, ...res){
+//             return x + y + res.reduce(function(a,b){return a+b;});
+//         }
+
+//         let arrr = [0,1,6,8,8];
+//         console.log(-1,...arrr,2,...[3]);
+//         console.log(calc(-1,...arrr,2,...[3]));
+//         console.log(calc(null, ...arrr));
+// ///퀴즈
+        var a=1;                            //a = 1
+        var b=5;                            //b = 5
+        function outfunc(){
+            function innerfunc(){
+                 a=b;                            
+        }
+            console.log(a);                 //a = 1                            
+            console.log(b);                 //b = undefined
+            a=3;                            //(a = 3)
+            b=4;                            //(b = 4)
+            innerfunc();                    
+            console.log(a);                 //a = 4
+            var b= 2;
+            console.log(b);                 //b = 2
+        }
+        outfunc();
+        console.log(a);                     //a = 4 
+        console.log(b);                     //b = 5
+
+//퀴즈        
+    </script>
+</body>
+</html>

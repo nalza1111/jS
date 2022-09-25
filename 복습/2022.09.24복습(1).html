@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <script>
+       let seasons = new Array('봄','여름','가을','겨울');
+    //    <div id = basic>
+    //         console.log(seasons);
+    //         console.log(seasons.length);
+    //         console.log(seasons[0]);
+
+    //         for( let i = 0; i < seasons.length; i++ )
+    //             console.log(seasons[i]);
+
+    //         for( let i = seasons.length-1; i > 0; i-- )
+    //             console.log(seasons[i]);    
+
+    //         for( let i in seasons )
+    //             console.log(seasons[i]);
+
+    //         for( let i of seasons)
+    //             console.log(i);
+    //     </div>
+       let colors = new Array('빨','주','노','초');
+    //    <div>
+    //     console.log(seasons.concat(colors));
+    //     console.log(colors.concat(colors));
+    //     console.log(seasons);
+    //     console.log(colors);
+    //     let concats = seasons.concat(colors);
+    //     console.log(concats);
+    //     console.log(concats.length);
+    //     console.log(concats[6]);
+    //    </div>
+//    <div>
+//     console.log(seasons.join());
+//     let i = seasons.join();
+//     console.log(typeof(i));  //--> 시즌이 조인된 i는 문자열
+//     console.log(seasons.reverse());
+//     console.log(seasons);
+//     seasons.push('응가');
+//     console.log(seasons);
+//     console.log(seasons.pop());
+//     seasons.pop();  //봄이 빠짐
+//     console.log(seasons);
+//     console.log(seasons.unshift('헤에'));
+//     console.log(seasons);
+//     console.log(seasons.shift());
+//     console.log(seasons.push('응아'));
+//     console.log(seasons.push('꿍차'));
+//    </div>
+    //   console.log(seasons); //원형
+       //let s = seasons.slice(2); 
+       //console.log(s);
+    //    console.log(seasons.splice(1)); // 슬라이스해도 그대로
+    //    console.log(seasons); // 슬라이스해도 그대로
+    //    let spli = seasons.splice(2,2); //spli에 시즌스에서 잘린게 들어감
+    //    console.log(spli);    //잘린게 들어옴
+    //    console.log(seasons); // 시즌은 잘려잇음
+        // console.log(seasons.splice(1,2,'1','2'));
+        // console.log(seasons);
+        // console.log(typeof(seasons));
+        // console.log(Array.isArray(seasons));
+        // console.log(colors.lastIndexOf('초'));
+        
+        // const arr = [1, 2, 3, 4, 5];
+
+        // arr.forEach(function(ele){
+        //     console.log(ele);
+        // })
+        let arr = [11, 2, 33, 42, 5];
+        let oddArray = [];
+        // arr.forEach(function(element,idx,array){
+        //     if(element%2 == 1){
+        //         return oddArray.push(element);
+        //         console.log(idx);
+        //     }
+        // })
+        //  console.log(oddArray);
+
+        //     let squ = arr.map(function(ele){
+        //         return ele*ele;
+        //         }
+        //     )
+        //     console.log(squ);
+        // let fillterArr = arr.filter(function(ele){
+        //     return ele <= 3;
+        // })
+        // console.log(fillterArr);
+        
+        // function less3(ele,idx,array){ // 선언함수
+        //     return ele < 3;
+        // }
+        // let oo = arr.every(less3);
+        // console.log(oo);
+        // let ii = arr.some(less3);
+        // console.log(ii);
+        // let arr2 = [11, 22, 33, 44, 55];
+        // let red = arr2.reduce(function(acc, cur, i){
+        //     console.log(`인덱스 : ${i}`);
+        //     console.log(`acc값 : ${acc}`);
+        //     console.log(`cur 값 : ${cur}`);
+        //     console.log('\n');
+        //     return cur+acc //=> 왼쪽에서 두개씩 묶어서 cur값에 return 하는거구나
+        // })
+        // console.log(red);
+        // console.log(Array.isArray(red));
+
+        // let redri = arr2.reduceRight(function(acc, cur, i){
+        //     console.log(`인덱스 : ${i}`);
+        //     console.log(`acc값 : ${acc}`);
+        //     console.log(`cur값 : ${cur}`);
+        //     console.log('\n');
+        //     return cur + acc
+        // })
+        // console.log(redri);
+
+        console.log(colors);
+            console.log(colors.sort(function(a, b){return a>b?1:-1})); //오름차순 1이면 b가 앞으로감
+            console.log(colors.sort(function(a, b){return a<b?1:-1})); //내림차순 1이면 b가 앞으로감
+            console.log(arr.sort(function(a, b){return a-b})); // 오름차순 a-b=양수 b가 앞/음수=a가 앞
+            console.log(arr.sort(function(a, b){return b-a}));//54321
+            console.log(arr); //-->배열자체가 편함
+            let aa = arr.sort(function(a, b){return a-b})
+            console.log(aa); // 12345
+            console.log(arr); //12345
+
+
+    </script>
+</body>
+</html>

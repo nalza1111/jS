@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<body>
+    <script>
+        // function pyta(width, height){
+        //     function square(x){
+        //         return x*x;
+        //     }
+        //     return Math.sqrt(square(width)+square(height));
+        // }
+        // let result = pyta(4, 9);
+        // console.log(result);
+//두 수를 입력받아 더해주는 함수
+            // function add(a, b){
+            //     hap = a+b
+            //     return hap
+            // }
+            // func
+            // let hap1 = add(3, 8);
+
+            // console.log(hap1);
+            // console.log(add(9, 7));
+
+            // let mult = function(a, b){
+            //     return a*b;
+            // }
+            // console.log(mult(5,3));
+//콜백함수
+        // function callTenTimes(callback){
+        //     for(let i = 0; i < 10; i++)
+        //         callback();
+        // }
+
+        // let callback = function(){
+        //     console.log('함수호출');
+        // }
+        // callTenTimes(callBack);
+
+//클로저
+        // function test(name){
+        //     let output = 'hllo ' + name;
+
+        //     return function(){
+        //         console.log(output);
+        //     };
+        // }
+        // test('javascript')();
+
+        // //console.log(output());  이렇게 접근 못함
+        // test('')
+
+//도전 문제1
+    // let name, kor, eng, math = Number(prompt('이름')), Number(prompt('국어')), Number(prompt('영어')), Number(prompt('수학'))
+   
+    let sungJuk = function(name, kor, eng, math){
+        avg = ( kor + eng + math )/3
+        console.log(`${name} | ${kor} | ${eng} | ${math} | 평균: ${avg}`);
+    }
+    sungJuk('홍길동', 70, 60, 90);
+    sungJuk('성춘향', 90, 70, 90);
+    sungJuk('이몽룡', 80, 60, 70);
+
+
+
+// 값을 입력받으면 최대값을 구하는거
+
+    function max(a, b, c, d, e, f){
+        value = [a,b,c,d,e,f,g]
+        num = value[0];
+        for(let i = 1; i<=value.length; i++){
+           if(num<value[i]){
+            num = value[i];
+           }
+        }
+        console.log(num);
+    }    
+    max(10, 50, 80, 60, 90, 100);
+
+//
+    
+    function max(){
+        value = [a,b,c,d,e,f,g]
+        num = value[0];
+        for(let i = 1; i<=value.length; i++){
+           if(num<value[i]){
+            num = value[i];
+           }
+        }
+        console.log(num);
+    }    
+    max(BB);
+    
+
+
+    // function max(a, b, c){
+    //     let d = a;
+    //     (d > b) ? d = d : d = b;
+    //     (d > c) ? d = d : d = c;
+    //     console.log(d);
+    // }    
+    // max(10, 7, 9);    
+
+    // console.log(Math.max(1, 3, 5, 4, 8));
+    // console.log("apple" || "banana");
+
+    </script>
+</body>
+</html>

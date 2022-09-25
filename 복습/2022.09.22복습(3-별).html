@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별찍기</title>
+</head>
+<body>
+    <script>
+    //이것봐 짱이지
+        let star = "*";
+        let space = " ";
+        let heigh = 5;
+        
+        for(let i = 1; i <= heigh; i++){
+            let result = '';
+                for(let j = 1; j < 2*heigh; j++)
+                if ((heigh-i-j+1)>0 || (i+j-(heigh+(2*i-1)))>0){
+                    result += ' ';
+                }else{
+                    result += '*';
+                }
+                console.log(result);
+            }
+        
+    //정석별찍기
+        for(let i = 1; i <= 5; i++ ){
+            let vu = ''
+            for(let j = 1; j <= 5-i; j++){
+                vu += ' ';
+            }
+            for(let k = 1; k <=2*i-1; k++){
+                vu += '*';
+            }
+            for(let l = 1; l <= 5-i; l++){
+                vu += ' ';
+            }
+            console.log(vu);
+        }   
+        for(let i = 5; i > 0; i--){
+            let vu = ''
+            for(let j = 1; j <= 5-i; j++){
+                vu += ' ';
+            }
+            for(let k = 1; k <=2*i-1; k++){
+                vu += '*';
+            }
+            for(let l = 1; l <= 5-i; l++){
+                vu += ' ';
+            }
+            console.log(vu);
+        }  
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin: 0 auto;
+            text-align: center;
+        }
+        div{
+            border: 1px solid black;
+            display: inline-block;
+            margin: 30px;
+            padding: 50px;
+            border-radius: 30px;
+            background-color: bisque;
+        }
+    </style>
+    <title>구구단</title>
+</head>
+<body>
+    <h1>구구단</h1>
+    <script>
+        for(let i=2; i<=9; i++){
+            document.write('<div>')  //태그를 넣어서 제어를 해줌
+            document.write(`<h3>${i}단</h3>`)
+                for(j=1; j<=9; j++){
+                    document.write(`${i} X ${j} = ${i*j}<br>`);
+            }
+            document.write('</div>')
+        }
+    </script>
+</body>
+</html>

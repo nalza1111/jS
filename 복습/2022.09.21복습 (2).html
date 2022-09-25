@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.문제풀이</title>
+</head>
+<body>
+    <script>
+        //1. 사각형의 넓이 = 가로*세로##############################################################
+        let wid = prompt('가로값을 입력하세요');   // number(prompt('너비값 = ')) 숫자로 강제형변환
+        let hei = prompt('세로값을 입력하세요');
+        let  widhei= wid * hei;
+        // alert('사각형의 너비는 = ' + widhei + '입니다');
+        alert(`사각형의 너비는 =  ${widhei} 입니다`);
+
+        //2. 나이계산##############################################################################
+        let birthYear = prompt('태어난 년도를 입력하세요');
+        let age;
+        age = 2022 - birthYear +1;
+        alert(`태어난 년도는 ${birthYear}년이고, 나이는 ${age}살입니다`);
+
+        //3.#######################################################################################
+        console.log(123 == '123') // T
+        console.log(123 === '123') // F
+        console.log(false != 'false') // T
+        console.log(false !== 'false') // T
+        console.log(typeof(256)) //NUMBER
+        console.log(typeof('256')) // STRING
+        console.log(typeof(false)) // BOOLEAN
+        console.log('10 + 20') // 10 + 20
+        console.log('10' + 20) // 1020
+        console.log('10' + '20') // 1020
+        console.log(10 + 20) // 30
+        console.log('10' * '2') // 20
+        console.log('10' - '20') // -10
+        console.log('10' % '3') // 1
+    </script>
+</body>
+</html>

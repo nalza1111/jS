@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습2</title>
+</head>
+<body>
+    <script>
+        //정규표현식
+        const CHECK_SPACE = /\s+/;
+        console.log(CHECK_SPACE.test(' '));
+        console.log(CHECK_SPACE.test('1 '));
+        console.log(CHECK_SPACE.test(' a'));
+        console.log(CHECK_SPACE.test('1 a'));
+        const onlyNumber = /^[0-9]*$/
+        console.log(onlyNumber.test('5'));
+        const onlyEng = /^[a-zA-Z]?$/
+        console.log(onlyEng.test('dd'));
+        const email = / \w+@\w+\.\w+(\.\w+)? /
+        console.log(email.test('aa@naver.com'));
+        const tel = /^\d{3}-\d{4}-\d{4}$/
+        console.log(tel.test('578-5435-2257'));
+        let abc = new RegExp;
+        console.log(abc);
+        const target = 'Is this all there is?';
+        const regEx = /is/ig;
+        console.log(regEx.test('Is this all there is?'));
+        console.log(target.match(regEx));
+        //Object 객체
+        let object = {
+            str : 'abc',
+            num : 123
+        };
+        console.log(object);
+        //let objict2 = new Object();//이 방식은 쓰는 사람 없지!
+
+        //let obj = Obj.constructor('qwr',235);     //constructor()이건 어찌쓰는건지
+        //console.log(obj instanceof Obj);
+        //let output ='';
+        //for(let i in obj){
+        //    output += '-' + i + ':'+obj[i] + '\n'
+        //}
+        //console.log(output);
+
+        
+        function Obj(str, num){
+            this.str = str;
+            this.num = num;
+        };
+
+        Obj.prototype.hamsu=function(){
+            return this.num*5;
+        };
+
+        let obj = new Obj('zxc', 456);
+        console.log(obj instanceof Obj);
+        let output ='';
+        for(let i in obj){
+            output += '-' + i + ':'+obj[i] + '\n'
+        }
+        console.log(output);
+
+
+        console.log(obj.hasOwnProperty('num')); //''넣어줘야함
+        console.log(Obj.isPrototypeOf(obj));  //??? 왜 false 뜸??
+        console.log(obj.isPrototypeOf(Obj));  //??? 왜 false 뜸??
+        console.log(Obj.prototype.isPrototypeOf(obj));  //??? 이건 트루 뜨네.. 위랑 차이가 뭐임?
+        console.log(obj.propertyIsEnumerable('num'));
+        console.log(Obj.prototype.toString()); //객체에 문자열이 정의되어 있는데 이걸 어찌저찌 설정할 수 있나봄..디폴트값 나옴 오브젝트 오오브젝트
+        console.log(obj.valueOf()); // 오 이거 쓸만할 듯
+
+        //Number 객체
+        let num = 273
+        let numobj = new Number(273);
+        console.log(num.toExponential(3));
+        console.log(num.toExponential());
+        console.log(num.toExponential(4));
+        console.log(num.toExponential(8));
+        console.log(num.toFixed(5));
+        console.log(num.toPrecision(1));
+
+        //String 객체
+        let str = 'hello';
+        let str2 = new String('hello');
+
+        const nu =7788;
+        console.log(nu.toString());
+        const arrr = [1,2,5,6,'a'];
+        console.log(arrr.toString());
+        console.log(obj.toString());
+        console.log(obj.str.toString());
+        console.log(obj.num.toString());
+
+        let s = ' 1A34b 7c9z ';
+        console.log(s.charAt(8));
+        console.log(s.charCodeAt(3));
+        console.log(String.fromCharCode(109));
+        console.log(s.concat('222'));
+        console.log(s.indexOf('b'));
+        console.log(s.match('9z'));
+        console.log(s.replace('1A','2B'));
+        console.log(s);
+        console.log(s.search('z'));
+        console.log(s.slice(3,8));
+        console.log(s);
+        console.log(s.split(' '));
+        console.log(s);
+        console.log(s.substr(3,8));
+        console.log(s);
+        console.log(s.substring(3,8));
+        console.log(s);
+        console.log(s.toUpperCase());
+        console.log(s.toString());
+        console.log(s.trim());
+        console.log(s);
+        
+        //Date 객체
+        let date = new Date() //현재 날짜 발생
+        let da = new Date('2022,09,26');
+        let date3 = new Date(2022,09,26);
+        let date4 = new Date(2022,09,26,5,5,5,0);
+        console.log(date3);
+        console.log(date4);
+        console.log(da.getFullYear());
+        console.log(da.getMonth());
+        console.log(da.getDate());
+        console.log(da.getDay());
+        console.log(da);
+        console.log(da.getHours());
+        console.log(da.getMilliseconds());
+        console.log(da.getTime());
+        let mmt = da.getTime();
+        console.log(mmt);
+        console.log(typeof(mmt));
+        console.log(typeof(da));
+        console.log(new Date(1));
+        console.log(new Date(da));
+
+        let now = new Date();
+        let xMas = new Date('2022,12,25');
+
+        let diff = xMas-now;
+
+        console.log(diff);  //날짜끼리 더하고 빼니 밀리초가되네
+
+        let remain = Math.floor(diff/(1000*60*60*24));
+
+        console.log(`크리스마스까지 ${remain}일 남았당`);
+
+        //Math생성객체
+        let max = Math.max;
+        console.log(max(52,358,35));
+        console.log(Math.max(52,358,35,888));
+        console.log(Math.min(52,358,35,888));
+
+        console.log(Math.ceil(77.45));
+        console.log(Math.ceil(-77.45));
+        console.log(Math.floor(77.45));
+        console.log(Math.floor(-77.45));
+        console.log(Math.round(77.45));
+
+        console.log(Math.sqrt(16));
+        console.log(Math.random());
+        console.log(Math.pow(3,3));
+        console.log(Math.abs(-8));
+        console.log(Math.SQRT2);
+        console.log(Math.PI);
+
+        //로또번호 발생
+
+        let lotto;
+
+        for(let i = 0; i < 5; i++){
+            lotto = '';
+            for(let j = 0; j < 6; j++){
+                lotto += Math.floor(Math.random()*45+1) + '\t'
+            }
+            //lotto += '\n' 어차피 행마다 출력해주니까 줄 띄울 필요없지..아래가 더 조음
+            console.log(lotto);
+        }
+//////////////////////////////////////////////////////////////////////
+        console.log('#########################################')
+        
+        let lotto2 ='';
+        for(let i = 0; i < 5; i++){
+            for(let j = 0; j < 6; j++){
+                lotto2 += Math.floor(Math.random()*45+1) + '\t'
+            }
+            lotto2 += '\n'
+        }
+        
+        console.log(lotto2);
+
+    </script>
+</body>
+</html>

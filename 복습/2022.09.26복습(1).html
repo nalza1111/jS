@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도전 문제</title>
+</head>
+<body>
+    <script>
+        function Student(name, kor = 0, eng = 0, math = 0, art = 0){
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+            this.art = art;
+        }
+        Student.prototype.getSum = function(){
+            return this.kor + this.eng + this.math + this.art;
+        }
+        Student.prototype.getAvg = function(){
+            return this.getSum()/4;
+        }
+        Student.prototype.toResult = function(){
+            console.log(this.name + '\t\t' + this.getSum() + '\t\t' + this.getAvg())
+        }
+        Student.prototype.toResult2 = function(){
+            return this.name + '\t\t' + this.getSum() + '\t\t' + this.getAvg()
+        }
+
+        let students = [];
+        students.push(new Student('홍길동', 96, 98, 92, 98));
+        students.push(new Student('성춘햔', 88, 74, 78, 92));
+        students.push(new Student('이몽룡', 69, 89, 92, 78));
+        students.push(new Student('임영웅', 97, 95, 89, 98));
+        students.push(new Student('성유리', 66, 80, 92, 94));
+        console.log(students);
+        console.log('이름\t\t총점\t평균\t')
+        for(let i in students){
+            students[i].toResult();
+        }
+
+        let str ='이름\t\t총점\t평균\n';
+        for(let i in students){
+            str += students[i].toResult2() + '\n';
+        }
+        console.log(str);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22기념일 계산하기22</title>
+    <style>
+        #container{
+            width : 400px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+        #day1{
+            text-align: center;
+        }
+        #accent{
+            padding: 8px;
+            font-weight: bold;
+            background-color: #ccc;
+            width: 100px;
+            font-size: 24px;
+            margin-left: 138px;
+        }
+        #day2 p{
+            background-color: black;
+            color: white;
+            height: 30px;
+            padding-left: 10px;
+            line-height: 30px;
+        }
+        #day2 ul{
+            list-style: none;
+            margin: 20px 40px;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+            overflow: hidden;
+        }
+        #day2 ul:last-child{
+            border: none;
+        }
+        #day2 li{
+            float: left;
+            font-weight: bold;
+        }
+        #day2 li:last-child{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="day1">
+            <h1>우리 만난 지</h1>
+            <h3 id = "accent">몇일?</h3>
+        </div>
+        <div id="day2">
+            <p>기념일 계산하기</p>
+            <ul>
+                <li>100일</li>
+                <li id="date100"></li>
+            </ul>
+            <ul>
+                <li>200일</li>
+                <li id="date200"></li>
+            </ul>     
+            <ul>
+                <li>1년</li>
+                <li id="date365"></li>
+            </ul>  
+            <ul>
+                <li>500일</li>
+                <li id="date500"></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let now = new Date();
+        let firstDay = new Date('2022,9,1');
+        document.querySelector('#accent').innerHTML = Math.floor((now-firstDay)/(1000*60*60*24)) +'일';
+
+        function dday(days){
+            let stime = days*1000*60*60*24; // 입력한 날의 초
+            first = firstDay.getTime(); //fday를 초로 바꿈 firstDay=firstDay.getTime(); 오류뜸(firstDay는 전역변수)
+            let cday = first+stime; //기준일과 입력한 초를 더해줌
+            let date2 = new Date(cday);
+
+            yy = date2.getFullYear();
+            mm = date2.getMonth()+1;
+            dd = date2.getDate();
+
+            document.querySelector('#date'+ days).innerHTML = 
+            yy + '년' + mm + '월' + dd + '일';
+        }
+        dday(100);
+        dday(200);
+        dday(365);
+        dday(500);
+    </script>
+</body>
+</html>

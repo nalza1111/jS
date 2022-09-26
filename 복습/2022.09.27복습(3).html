@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM과 Event</title>
+</head>
+<body>
+    <h1 id = "cat">문서 객체 속성 변경</h1> <!-- onclick ="alert('클림함!')"-->
+    <img src="복습/실습용이미지/cat.jpg" id="catcat" width="300px" height="200px">
+    <script>
+        // let newP = document.creatElement('p');
+        // let newText = document.createTextNode('주문완료');
+        // newP.appendChild(newText);
+        // document.body.appendChild(newP);
+
+        // let newAttr = document.createAttribute('class');
+        // newAttr.value = 'accent';
+        // newP.setAttibuteNode(newAttr);
+        // getElemntById(id)
+
+        document.querySelector('#cat').innerHTML = '이미지 변경';
+        document.querySelector('#cat').onclick = function(){this.style.border='5px solid red';};
+        document.querySelector('#cat').style.border = '1px solid pink';
+        document.querySelector('#cat').style.backgroundColor = 'yellow';
+        let shift = document.querySelector('#catcat');
+        shift.setAttribute('src',"복습/실습용이미지/dog.png");
+        //shift.parentNode.removeChild(catcat);
+        document.querySelector('#cat')
+
+        let handler = function(){
+            this.style.width = '1000px'
+            alert('click');
+        }
+        shift.addEventListener('click',handler);
+        shift.removeEventListener('click',handler);
+
+    </script> 
+</body>
+</html>
